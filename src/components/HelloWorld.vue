@@ -2,9 +2,9 @@
 export default {
   data: function () {
     return {
-      yearsCount: 5,
+      yearsCount: 7,
       startingYear: 2023,
-      grantedOptionsYear: [],
+      grantedOptionsYear: [3000, 3750, 3900, 4050, 4200],
     };
   },
   computed: {
@@ -20,12 +20,12 @@ export default {
     getCellValue: function (row, column) {
       if (row <= column && column - row < 3) {
         if (!this.grantedOptionsYear[row]) {
-          return '';
+          return "";
         }
 
         return Math.floor(this.grantedOptionsYear[row] / 3);
       } else {
-        return '';
+        return "";
       }
     },
     getYearAvailable: function (column) {
